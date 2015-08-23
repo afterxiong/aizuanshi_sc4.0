@@ -34,6 +34,7 @@ import com.sc.aizuanshi.db.DBHelper;
 import com.sc.aizuanshi.utils.Config;
 import com.sc.aizuanshi.utils.CopyData;
 import com.sc.aizuanshi.utils.Game;
+import com.umeng.analytics.MobclickAgent;
 
 public class BaseActivity extends Activity implements QuMiNotifier,GetTotalMoneyListener {
 	private int qumiNumber = 0;
@@ -239,5 +240,12 @@ public class BaseActivity extends Activity implements QuMiNotifier,GetTotalMoney
 	public int getDianleNumber(){
 		return dianleNumber;
 	}
-
+	protected void onPause() {
+		super.onPause();
+		MobclickAgent.onPause(this);
+	}
+	protected void onResume() {
+		super.onResume();
+		MobclickAgent.onResume(this);
+	}
 }

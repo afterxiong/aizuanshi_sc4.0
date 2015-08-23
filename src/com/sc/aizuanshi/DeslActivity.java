@@ -46,7 +46,7 @@ public class DeslActivity extends BaseActivity {
 
 	public void tipDialog() {
 		final AlertDialog.Builder dialog = new Builder(this);
-		if (config.getrRank() <= 1) {
+		if (config.getrRank() <= -1) {
 			dialog.setTitle("温馨提示");
 			dialog.setMessage(getResources().getString(R.string.tip_text1));
 			dialog.setNegativeButton("免费赚积分", new DialogInterface.OnClickListener() {

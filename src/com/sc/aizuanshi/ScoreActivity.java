@@ -15,10 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dlnetwork.DevInit;
-import com.dlnetwork.GetTotalMoneyListener;
 import com.newqm.sdkoffer.QuMiConnect;
 import com.sc.aizuanshi.utils.Parameters;
-import com.sc.aizuanshi.R;
+import com.umeng.update.UmengUpdateAgent;
 
 public class ScoreActivity extends BaseActivity {
 	private TextView gameTitle, gold;

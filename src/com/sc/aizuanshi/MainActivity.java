@@ -30,6 +30,8 @@ import com.sc.aizuanshi.R;
 import com.sc.aizuanshi.db.DBHelper;
 import com.sc.aizuanshi.utils.Game;
 import com.sc.aizuanshi.utils.Parameters;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.update.UmengUpdateAgent;
 
 public class MainActivity extends BaseActivity {
 	private static final String TAG = "MainActivity";
@@ -43,7 +45,9 @@ public class MainActivity extends BaseActivity {
 		setContentView(R.layout.activity_main);
 		sort();
 		initView();
-//		downloadApk();
+		// downloadApk();
+		UmengUpdateAgent.setUpdateOnlyWifi(false);
+		UmengUpdateAgent.update(this);
 	}
 
 	public void downloadApk() {

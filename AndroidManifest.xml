@@ -27,7 +27,6 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
@@ -59,6 +58,9 @@
             android:name="UMENG_MESSAGE_SECRET"
             android:value="5567679fc2e89c749b74e078fe9b9dee" >
         </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Channel ID" />
 
         <!-- 腾讯SSO授权的Activity注册 -->
         <activity
@@ -254,11 +256,14 @@
             android:name="com.newqm.sdkoffer.QuMiActivity"
             android:configChanges="keyboardHidden|orientation" />
         <!-- 点乐////////////////////////////////////////////////////////////////////////////////// -->
+
         <activity
             android:name="com.dlnetwork.DevNativeActivity"
             android:configChanges="keyboardHidden|orientation"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <service android:name="com.dlnetwork.DevNativeService" />
+
     </application>
 
 </manifest>

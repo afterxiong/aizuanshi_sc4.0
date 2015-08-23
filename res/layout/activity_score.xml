@@ -46,7 +46,6 @@
                 android:layout_marginRight="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/acquire_bg"
-                android:visibility="gone"
                 android:onClick="dianle"
                 android:text="金币获取通道" />
             <Button

@@ -25,6 +25,7 @@ public class WelcomeActivity extends BaseActivity {
 		this.finish();
 		checkApks();
 		initAd();
+		UmengUpdateAgent.update(this);
 	}
 
 	private void initAd() {
@@ -39,14 +40,14 @@ public class WelcomeActivity extends BaseActivity {
 		/** »§√◊ */
 		QuMiConnect.ConnectQuMi(this, Parameters.QU_MI_APP_ID,
 				Parameters.QU_MI_KEY);
-		// µ„¿÷
-		// DevInit.initGoogleContext(this, Parameters.DIAN_LE_ID);
+
+		DevInit.initGoogleContext(this, "c637cdec71059668ab9962e243152f57");
+		DevInit.setCurrentUserID(this, "123456789");
+
 		// ”—√À
 		PushAgent mPushAgent = PushAgent.getInstance(this);
 		mPushAgent.enable();
 		PushAgent.getInstance(this).onAppStart();
-		UmengUpdateAgent.setUpdateOnlyWifi(false);
-		UmengUpdateAgent.update(this);
 	}
 
 	private void checkApks() {
