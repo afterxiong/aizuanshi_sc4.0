@@ -28,17 +28,15 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.dlnetwork.GetTotalMoneyListener;
 import com.newqm.sdkoffer.QuMiNotifier;
 import com.sc.aizuanshi.db.DBHelper;
 import com.sc.aizuanshi.utils.Config;
 import com.sc.aizuanshi.utils.CopyData;
 import com.sc.aizuanshi.utils.Game;
-import com.umeng.analytics.MobclickAgent;
+import com.xxsmoneyx.DevInit;
+import com.xxsmoneyx.GetTotalMoneyListener;
 
-public class BaseActivity extends Activity implements QuMiNotifier,GetTotalMoneyListener {
-	private int qumiNumber = 0;
-	private int dianleNumber = 0;
+public class BaseActivity extends Activity   {
 	private SharedPreferences pref;
 	private Editor editor;
 	public Config config;
@@ -73,17 +71,13 @@ public class BaseActivity extends Activity implements QuMiNotifier,GetTotalMoney
 			public void onClick(DialogInterface dialog, int which) {
 				DownloadManager dm = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				Uri uri = Uri.parse(plugUrl);
-				File folder = Environment
-						.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+				File folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 				if (!folder.exists() || !folder.isDirectory()) {
 					folder.mkdirs();
 				}
-				DownloadManager.Request request = new DownloadManager.Request(
-						uri);
-				request.setAllowedNetworkTypes(Request.NETWORK_MOBILE
-						| Request.NETWORK_WIFI);
-				request.setDestinationInExternalPublicDir(
-						Environment.DIRECTORY_DOWNLOADS, "new_version.apk");
+				DownloadManager.Request request = new DownloadManager.Request(uri);
+				request.setAllowedNetworkTypes(Request.NETWORK_MOBILE | Request.NETWORK_WIFI);
+				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "new_version.apk");
 				request.setVisibleInDownloadsUi(true);
 				long downloadId = dm.enqueue(request);
 
@@ -135,52 +129,6 @@ public class BaseActivity extends Activity implements QuMiNotifier,GetTotalMoney
 		return baos.toString();
 	}
 
-	/**
-	 * 更新
-	 * 
-	 * @param describe
-	 * @param urlpath
-	 */
-	private void showUpdateDialog(String describe, final String urlpath) {
-		final AlertDialog.Builder dialog = new Builder(this);
-		dialog.setCancelable(false);
-		dialog.setTitle(this.getResources().getString(
-				R.string.splashactivity_update_prompt));
-		dialog.setMessage(describe);
-		dialog.setNegativeButton("以后更新", new OnClickListener() {
-
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-			}
-		});
-		dialog.setPositiveButton("马上更新", new OnClickListener() {
-
-			public void onClick(DialogInterface dialog, int which) {
-				DownloadManager dm = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				System.out.println("更新的地址" + urlpath);
-				Uri uri = Uri.parse(urlpath);
-				File folder = Environment
-						.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-				if (!folder.exists() || !folder.isDirectory()) {
-					folder.mkdirs();
-				}
-				DownloadManager.Request request = new DownloadManager.Request(
-						uri);
-				request.setAllowedNetworkTypes(Request.NETWORK_MOBILE
-						| Request.NETWORK_WIFI);
-				request.setDestinationInExternalPublicDir(
-						Environment.DIRECTORY_DOWNLOADS, "new_version.apk");
-				request.setTitle("版本更新中....");
-				request.setVisibleInDownloadsUi(true);
-				long downloadId = dm.enqueue(request);
-				editor.putLong("download_id", downloadId);
-				editor.commit();
-				dialog.dismiss();
-			}
-		});
-		dialog.show();
-	}
-
 	public void dialogFollow() {
 		final AlertDialog.Builder dialog = new Builder(this);
 		dialog.setTitle("联系客服");
@@ -189,11 +137,9 @@ public class BaseActivity extends Activity implements QuMiNotifier,GetTotalMoney
 
 			public void onClick(DialogInterface dialog, int which) {
 				ClipboardManager cm = (ClipboardManager) BaseActivity.this.getSystemService(Context.CLIPBOARD_SERVICE);
-				ClipData clip = ClipData
-						.newPlainText("simple text", "heiying8");
+				ClipData clip = ClipData.newPlainText("simple text", "heiying8");
 				cm.setPrimaryClip(clip);
-				Toast.makeText(BaseActivity.this, "复制成功", Toast.LENGTH_SHORT)
-						.show();
+				Toast.makeText(BaseActivity.this, "复制成功", Toast.LENGTH_SHORT).show();
 			}
 		});
 		dialog.show();
@@ -214,38 +160,5 @@ public class BaseActivity extends Activity implements QuMiNotifier,GetTotalMoney
 		return temp;
 	}
 
-	public void earnedPoints(int pointTotal, int arg1) {
 
-	}
-
-	public void getPoints(int arg0) {
-		qumiNumber = arg0;
-	}
-
-	public void getPointsFailed(String arg0) {
-
-	}
-
-	public int getQuMiNumber() {
-		return qumiNumber;
-	}
-
-	public void getTotalMoneyFailed(String arg0) {
-		
-	}
-
-	public void getTotalMoneySuccessed(String arg0, long arg1) {
-		this.dianleNumber=(int) arg1;
-	}
-	public int getDianleNumber(){
-		return dianleNumber;
-	}
-	protected void onPause() {
-		super.onPause();
-		MobclickAgent.onPause(this);
-	}
-	protected void onResume() {
-		super.onResume();
-		MobclickAgent.onResume(this);
-	}
 }

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sc.aizuanshi"
     android:versionCode="8"
-    android:versionName="6.0.0.2" >
+    android:versionName="7.0.0.2" >
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -258,11 +258,11 @@
         <!-- 点乐////////////////////////////////////////////////////////////////////////////////// -->
 
         <activity
-            android:name="com.dlnetwork.DevNativeActivity"
+            android:name="com.xxsmoneyx.DevNativeActivity"
             android:configChanges="keyboardHidden|orientation"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <service android:name="com.dlnetwork.DevNativeService" />
+        <service android:name="com.xxsmoneyx.DevNativeService" />
 
     </application>
 

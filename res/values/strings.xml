@@ -22,7 +22,7 @@
     <string name="acquire">领取钻石</string>
     <string name="upgrade_vip">升级VIP</string>
     <string name="before">当前积分:%1$s</string>
-    <string name="gold_tip">当前拥有的金币:%1$s</string>
+    <string name="gold_tip">当前拥有的金币:%1$d</string>
     <string name="tip">恭喜aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</string>
     <string name="before1">当前积分:%1$s</string>
     <string name="share_text">1、点击按钮分享到社交平台\n\t\t获得10个积分就能成为VIP\n2、QQ群分享4次，获得四个积分\n3、微信分享4次，获得四个积分\n4、空间分享1次，获得一个积分\n5、朋友圈分享1次，获得一个积分</string>

@@ -9,13 +9,13 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
-import com.dlnetwork.DevInit;
 import com.newqm.sdkoffer.QuMiConnect;
 import com.sc.aizuanshi.db.DBHelper;
 import com.sc.aizuanshi.utils.Game;
 import com.sc.aizuanshi.utils.Parameters;
 import com.umeng.message.PushAgent;
 import com.umeng.update.UmengUpdateAgent;
+import com.xxsmoneyx.DevInit;
 
 public class WelcomeActivity extends BaseActivity {
 
