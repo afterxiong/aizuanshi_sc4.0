@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.sc.aizuanshi.R;
 import com.sc.aizuanshi.utils.Config;
+import com.sc.aizuanshi.utils.LevelConfig;
 import com.sc.aizuanshi.utils.Parameters;
 
 public class DeslActivity extends BaseActivity {
@@ -30,12 +31,6 @@ public class DeslActivity extends BaseActivity {
 		initView();
 	}
 
-	// private void initAd() {
-	// AdView adView = new AdView(this, AdSize.FIT_SCREEN);
-	// LinearLayout adLayout = (LinearLayout) findViewById(R.id.adLayout);
-	// adLayout.addView(adView);
-	// }
-
 	public void goShare(View view) {
 		startShareActivity();
 	}
@@ -45,18 +40,19 @@ public class DeslActivity extends BaseActivity {
 	}
 
 	public void tipDialog() {
+		int level = LevelConfig.getLevel();
 		final AlertDialog.Builder dialog = new Builder(this);
-		if (config.getrRank() <= 1) {
-			dialog.setTitle("温馨提示");
+		if (level > 0) {
+			dialog.setTitle(getResources().getString(R.string.reminder));
 			dialog.setMessage(getResources().getString(R.string.tip_text1));
-			dialog.setNegativeButton("免费赚积分", new DialogInterface.OnClickListener() {
+			dialog.setNegativeButton("", new DialogInterface.OnClickListener() {
 
 				public void onClick(DialogInterface dialog, int which) {
 					startShareActivity();
 				}
 			});
 		} else {
-			dialog.setTitle("温馨提示");
+			dialog.setTitle(getResources().getString(R.string.reminder));
 			String rankTextTip = Parameters.rankId[config.getrRank()];
 			dialog.setMessage("当前" + rankTextTip + "数量超现，请通过升级界面免费升级成Vip2或者更高级别");
 			dialog.setNegativeButton("免费去升级", new DialogInterface.OnClickListener() {

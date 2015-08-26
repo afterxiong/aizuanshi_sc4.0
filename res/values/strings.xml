@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="contacts">联系我们</string>
+    <string name="message_tip">请关注我们唯一的微信公众号heiying8,及时获取更多的资讯</string>
+    <string name="copy_wechat">复制公众号</string>
+    <string name="copy_success">复制成功</string>
+    <string name="reminder">温馨提示</string>
+    <string name="ferr_points">免费赚积分</string>
+    
     <string name="hello_world">Hello world!</string>
     <string name="app_name">天天爱钻石</string>
     <string name="game_tip">腾讯游戏</string>
     <string name="present_integral">当前积分:%1$d</string>
     <string name="share_integral">分享赚积分</string>
-    <string name="contacts">联系我们</string>
     <string name="wall_integral">升级Vip</string>
     <string name="remain_integral">当前为免费用户，还差%1$d分成为会员</string>
     <string name="refurbish">刷新积分</string>

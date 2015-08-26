@@ -1,6 +1,6 @@
 package com.sc.aizuanshi.utils;
 
-public class Game {
+public class Play {
 	private int id;
 	private String name;
 	private String packages;
@@ -11,7 +11,7 @@ public class Game {
 	private int wechatmom;
 
 	public String toString() {
-		return "Game [id=" + id + ", name=" + name + ", packages=" + packages + ", exist=" + exist + ", qq=" + qq
+		return "Play [id=" + id + ", name=" + name + ", packages=" + packages + ", exist=" + exist + ", qq=" + qq
 				+ ", qzones=" + qzones + ", wechats=" + wechats + ", wechatmom=" + wechatmom + "]";
 	}
 

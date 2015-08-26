@@ -66,7 +66,7 @@ public class ScoreActivity extends BaseActivity {
 
 		findViewById(R.id.follow).setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				dialogFollow();
+				contacts();
 			}
 		});
 
@@ -177,7 +177,7 @@ public class ScoreActivity extends BaseActivity {
 	}
 
 	public void feedback(View view) {
-		dialogFollow();
+		contacts();
 	}
 
 	protected void onDestroy() {

@@ -12,8 +12,8 @@ import android.util.Log;
 
 import com.sc.aizuanshi.R;
 
-public class CopyData {
-	private static final String TAG = "CopyData";
+public class Copydb {
+	private static final String TAG = "Copydb";
 	public static final int DB_VERSION = 1;
 
 	public static boolean extractDatabase(Context context, String name) {

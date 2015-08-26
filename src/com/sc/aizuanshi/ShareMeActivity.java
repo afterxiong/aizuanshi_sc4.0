@@ -55,9 +55,11 @@ public class ShareMeActivity extends BaseActivity implements OnClickListener {
 	}
 
 	private void configPlatforms() {
-		tencent = Tencent.createInstance(Parameters.QQ_APP_ID, this.getApplicationContext());
-		api = WXAPIFactory.createWXAPI(this, Parameters.WEIXIN_APP_ID);
-		api.registerApp(Parameters.WEIXIN_APP_ID);
+		String qq_id = getResources().getString(R.string.qq_id);
+		String weixin_id = getResources().getString(R.string.weixin_id);
+		tencent = Tencent.createInstance(qq_id, this.getApplicationContext());
+		api = WXAPIFactory.createWXAPI(this, weixin_id);
+		api.registerApp(weixin_id);
 	}
 
 	public void initView() {

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="weixin_id">wx3d95658fc25548c9</string>
+    <string name="weixin_key">44b03c4a925a82be18641d5152bf997f</string>
+    <string name="qq_id">1104617409</string>
+    <string name="youmi_id">de56116dfa751b45</string>
+    <string name="youmi_key">d3bb2f483c6d2712</string>
+    <string name="qumi_id">1b9af27d47a97188</string>
+    <string name="qumi_key">718b30b85df13cc9</string>
+    <string name="dianle_key">c637cdec71059668ab9962e243152f57</string>
+
+</resources>

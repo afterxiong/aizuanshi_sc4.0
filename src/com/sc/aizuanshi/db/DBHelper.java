@@ -26,10 +26,10 @@ public class DBHelper extends SQLiteOpenHelper {
 		return db.rawQuery(sql, null);
 	}
 
-	public void updateSate(int id) {
+	public void updateSate(int id,int state) {
 		String sql = "update game set exist=? where _id=?";
 		SQLiteDatabase db = getWritableDatabase();
-		db.execSQL(sql, new Object[] { 1, id });
+		db.execSQL(sql, new Object[] { state, id });
 	}
 
 }

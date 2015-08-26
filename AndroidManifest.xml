@@ -27,6 +27,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
@@ -49,6 +50,17 @@
         </activity>
         <activity android:name="com.sc.aizuanshi.ScoreActivity" >
         </activity>
+
+        <!-- apk安装,删除和替换广播监听 -->
+        <receiver android:name="com.sc.aizuanshi.receiver.AppCheckRecevier" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
 
         <meta-data
             android:name="UMENG_APPKEY"
@@ -263,7 +275,6 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <service android:name="com.xxsmoneyx.DevNativeService" />
-
     </application>
 
 </manifest>
